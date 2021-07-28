@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="styles.css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+    <nav>
+        <a href="index.html"> Inicio </a> 
+        <a id="precioDet" href="precioDet.html"> Desde precio establecido </a> 
+        <a id="precioADet" href="precioADet.html"> Desde saldo a disponer </a>
+    </nav>
+    <header>
+        <h1 id="titulo" class="titulo_pri animate__animated">Costos a pagar según el saldo que se desea disponer</h1>
+    </header>
+    <main>
+        <form id="formulario" class="contenedor_calcu animate__animated">
+            <label for="precioFinal">Valor que se desea disponer: </label>
+            <input type="number" id="precioFinal">
+            <br>
+            <label for="medioDePago">Forma de pago elegida por el cliente: </label>
+            <select name="medioDePago" id="medioDePago">
+                <option value="seleccionar">Seleccionar</option>
+                <option value="point_tc">POINT - Tarjeta de crédito</option>
+                <option value="point_td">POINT - Tarjeta de débito</option>
+                <option value="qr_tc">QR - Tarjeta de crédito</option>
+                <option value="qr_td">QR - Tarjeta de débito</option>
+                <option value="qr_mp">QR - Dinero en Mercado Pago</option>
+                <option value="lp_tc">LINK DE PAGO - Tarjeta de crédito</option>
+                <option value="lp_td">LINK DE PAGO - Tarjeta de débito</option>
+                <option value="lp_mp">LINK DE PAGO - Dinero en Mercado Pago</option>
+                <option value="transf">Transferencia Bancaria</option>
+                <option value="efvo">Efectivo</option>
+            </select>
+            <br>
+            <label for="disponibilidad">Momento en el que queres disponible el dinero: </label>
+            <select name="disponibilidad" id="disponibilidad">
+                <option value="0" selected>En el momento</option>
+                <option id="2dias" value="2">En 2 días</option>
+                <option id="10dias" value="10">En 10 días</option>
+                <option id="18dias" value="18">En 18 días</option>
+                <option id="35dias" value="35">En 35 días</option>
+                <option id="70dias" value="70">En 70 días</option>
+            </select>
+            <br>
+            <label for="">Elija la forma de financiación: </label>
+            <div class="opcionesFinanciacion">
+                
+                    <label for="cuotasAhora12">Ahora 12</label>
+                    <input name="cuotas" type="radio" id="cuotasAhora12" value="cuotasAhora12">
+                
+                    <label for="cuotasMP">Mercado Pago</label>
+                    <input name="cuotas" type="radio" id="cuotasMP" value="cuotasMP">
+                
+                    <label for="sinFinanciacion">Sin financiación</label>
+                    <input name="cuotas" type="radio" id="sinFinanciacion" value="sinFinanciacion">
+               
+            </div>
+            <div class="cuotasAhora12">
+                <label for="ahora12">Cuotas elegidas con Ahora 12:</label>
+                <select name="ahora12" id="ahora12">
+                    <option value="0" selected>1 pago</option>
+                    <option value="3">3 pagos</option>
+                    <option value="6">6 pagos</option>
+                    <option value="12">12 pagos</option>
+                    <option value="18">18 pagos</option>
+                </select>
+            </div>
+            <div class="cuotasMP">
+                <label for="cuotasMercado">Cuotas elegidas con Mercado Pago:</label>
+                <select name="mPcuotas" id="mPcuotas">
+                    <option value="0" selected>1 pago</option>
+                    <option value="3">3 pagos</option>
+                    <option value="6">6 pagos</option>
+                    <option value="9">9 pagos</option>
+                    <option value="12">12 pagos</option>
+                </select>
+            </div>
+            <br>
+            <label for="iibb">Alícuota de Ingresos Brutos: </label>
+            <select name="iibb" id="iibb">
+                <option value="0.025" selected>2.50%</option>
+                <option value="0.035">3.50%</option>
+                <option value="0.05">5.00%</option>
+            </select>
+            <br>
+            
+            <div class="contenedor_btn">
+                <button class="btn_reset">Resetear</button>
+                <button class="btn_calc2">Calcular</button> 
+            </div>
+            <br>
+            <label for="resultado">Precio de venta determinado: </label>
+            <input type="number" id="resultado" name="resultado" readonly>
+            <div id="porcentaje">
+                <p>Porcentaje aplicado sobre valor a disponer: </p> 
+            </div>
+            <div id="detalle">
+                <details>
+                    <summary> Detalle de descuentos</summary>
+                    
+                        <p id="PV">Precio venta final: </p>
+                        <p id="CMP">Comisión Mercado Pago: </p> 
+                        <p id="CF">Costo Financiación: </p>
+                        <p id="IB">Impuesto a los Ingresos Brutos: </p>
+                        <p id="SFD">Monto total descontado: </p>
+                        
+                </details>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p class="footer">Copyright - Romina Tauber 2021</p>
+    </footer>
+    <script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>

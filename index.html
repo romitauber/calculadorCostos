@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="styles.css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    </script>
+    
+
+</head>
+<body>
+    <nav>
+        <a id="inicio" href="index.html"> Inicio </a> 
+        <a id="precioDet" href="precioDet.html"> Desde precio establecido </a> 
+        <a id="precioADet" href="precioADet.html"> Desde saldo a disponer </a>
+    </nav>
+
+    <header>
+        
+            <div class="header contenedor-hero animate__animated">
+                <h1 id="titulo_simple" class="titulo animate__animated animate__fadeInBottomLeft">SIMPLE</h1>
+                <img class="img-coins animate__animated animate__fadeInBottomRight" src="Coins-amico.svg" alt="Coins">
+                <p class="subtitulo animate__animated animate__bounceInUp">Simple, es una forma fácil y rápida de determinar el precio FINAL de un producto o servicio considerando los costos de Mercado Pago, Financiación con Ahora 12 e Ingresos Brutos</p>
+            </div>
+        
+    </header>
+    <main class="contenedor_opciones">
+        <h2 class="intro animate__animated animate__delay-1s animate__flipInX">¡Empezá ahora! </h2>
+        <svg class="center" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-down" width="60" height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6B8E23" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M15 4v8h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-8a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1z" />
+        </svg>
+        <div class="op1 animate__animated animate__flipInY" id="op1">
+            <h3>Desde el precio ya establecido</h3>
+            <p>Cálculo del saldo que quedará disponible desde el precio de la venta cobrada mediante Mercado Pago</p>
+            <a class="btn_op" id="btn_1" href="precioDet.html">Seleccionar</a>
+        </div>
+        <div class="op2 animate__animated animate__flipInY" id="op2">
+            <h3>Desde saldo que quiero disponible</h3>
+            <p>Cálculo del precio FINAL al que se deberá vender el producto o servicio para cobrar determinado valor neto de comisiones </p>
+            <a class="btn_op" id="btn_2" href="precioADet.html">Seleccionar</a>
+        </div>
+        <div class="op3 animate__animated  animate__flipInY" id="op3">
+            <h3>Comisiones cobradas</h3>
+            <p>Acá vas a poder ver los porcentajes finales que te serán descontados de tus ventas de acuerdo a la metodología de pago elegida por tu cliente</p>
+            <a class="btn_op" id="btn_3" href="comisiones.html">Seleccionar</a>
+        </div>
+    </main>
+    <footer>
+        <p class="footer">Copyright - Romina Tauber 2021</p>
+    </footer>
+    <script src="scripts/js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    
+    
+</body>
+</html>
